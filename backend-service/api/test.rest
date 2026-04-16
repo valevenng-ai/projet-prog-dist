@@ -1,0 +1,49 @@
+POST http://localhost:8000/api/events/
+Content-Type: application/json
+
+{
+    "title": "Concert",
+    "description": "Concert à Paris de jsp",
+    "date": "2026-04-21T20:00:00",
+    "status": "active"
+}
+
+###
+GET  http://localhost:8000/api/events/
+
+###
+DELETE http://localhost:8000/api/events/2/
+
+###
+PUT http://localhost:8000/api/events/3/
+Content-Type: application/json
+
+{
+    "title": "Séance cinéma",
+    "description": "Séance Marty Supreme",
+    "date": "2026-04-21T20:00:00",
+    "status": "active"
+}
+
+###
+PATCH http://localhost:8000/api/events/3/
+Content-Type: application/json
+
+{
+    "status": "inactive"
+}
+
+###
+POST http://localhost:8000/api/auth/login/
+Content-Type: application/json
+
+{
+    "username": "admintest",
+    "password": "admintest"
+}
+
+###
+GET  http://localhost:8000/api/registrations/
+
+###
+GET http://localhost:8000/api/events/4/

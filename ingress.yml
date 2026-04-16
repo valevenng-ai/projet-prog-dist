@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: eventhub-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: eventhub.info
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: events-service
+                port:
+                  number: 8080
