@@ -1,0 +1,9 @@
+asgiref==3.11.1
+Django
+django-cors-headers==4.9.0
+django-rest-framework==0.1.0
+djangorestframework==3.16.1
+gunicorn==25.3.0
+packaging==26.0
+sqlparse==0.5.5
+whitenoise==6.12.0
