@@ -12,7 +12,19 @@ spec:
       labels:
         app: auth-service
     spec:
+      initContainers:
+        - name: migrate
+          image: valentinng00/auth-service
+          command: ["sh", "-c"]
+          args:
+            - |
+              echo "Waiting for postgres..."
+              until nc -z postgres-service 5432; do
+                sleep 2
+              done
+              echo "Postgres is up"
+              python manage.py migrate
       containers:
         - name: auth-service
-          image: valentinng00/auth-service:4
+          image: valentinng00/auth-service:5
           imagePullPolicy: Always

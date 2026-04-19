@@ -87,8 +87,12 @@ WSGI_APPLICATION = 'eventhub.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'authdb',
+        'USER': 'dbuser',
+        'PASSWORD': 'dbpass',
+        'HOST': 'postgres-service',
+        'PORT': '5432',
     }
 }
 
