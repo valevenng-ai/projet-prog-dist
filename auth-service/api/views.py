@@ -72,19 +72,3 @@ def register_view(request):
         'role': 'viewer',
         'username': user.username,
     }, status=status.HTTP_201_CREATED)
-
-
-@api_view(['POST'])
-@permission_classes([AllowAny])
-def validate_token_view(request):
-    token_key = request.data.get('token')
-    try:
-        token = Token.objects.get(key=token_key)
-        user = token.user
-        if user.is_superuser or user.groups.filter(name='admin').exists():
-            role = 'admin'
-        else:
-            role = 'viewer'
-        return Response({'valid': True, 'role': role, 'username': user.username})
-    except Token.DoesNotExist:
-        return Response({'valid': False}, status=status.HTTP_401_UNAUTHORIZED)

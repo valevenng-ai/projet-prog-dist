@@ -1,18 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: event-service
+  name: frontend-service
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: event-service
+      app: frontend-service
   template:
     metadata:
       labels:
-        app: event-service
+        app: frontend-service
     spec:
       containers:
-        - name: event-service
-          image: valentinng00/event-service:4
+        - name: frontend-service
+          image: valentinng00/frontend-service:5
           imagePullPolicy: Always
+        
