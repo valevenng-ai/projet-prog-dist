@@ -57,7 +57,8 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
-    "http://eventhub.local"
+    "http://eventhub.local",
+    "https://eventhub.local",
 ]
 
 
@@ -88,9 +89,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'eventdb',
-        'USER': 'dbuser',
-        'PASSWORD': 'dbpass',
-        'HOST': 'postgres-service',
+        'USER': 'postgresadmin',
+        'PASSWORD': 'password123',
+        'HOST': 'postgres',  # ← nom du service K8s
         'PORT': '5432',
     }
 }

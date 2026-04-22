@@ -47,7 +47,6 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -58,7 +57,8 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
-    "http://eventhub.local"
+    "http://eventhub.local",
+    "https://eventhub.local",
 ]
 
 
@@ -89,9 +89,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'authdb',
-        'USER': 'dbuser',
-        'PASSWORD': 'dbpass',
-        'HOST': 'postgres-service',
+        'USER': 'postgresadmin',
+        'PASSWORD': 'password123',
+        'HOST': 'postgres',  # ← nom du service K8s
         'PORT': '5432',
     }
 }

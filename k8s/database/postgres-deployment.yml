@@ -14,13 +14,11 @@ spec:
     spec:
       containers:
         - name: postgres
-          image: postgres:10.1
+          image: postgres:15
           imagePullPolicy: "IfNotPresent"
           ports:
             - containerPort: 5432   
-          envFrom:
-            - secretRef:
-                name: postgres-secret            
+          envFrom:         
             - configMapRef:
                 name: postgres-config
           volumeMounts:
@@ -30,8 +28,7 @@ spec:
               mountPath: /docker-entrypoint-initdb.d
       volumes:
         - name: postgredb
-          persistentVolumeClaim:
-            claimName: postgres-pv-claim
+          emptyDir: {}
         - name: init-script
           configMap:
             name: postgres-init-script

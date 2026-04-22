@@ -1,4 +1,4 @@
-POST http://localhost:8000/api/events/
+POST http://eventhub.local/api/events/
 Content-Type: application/json
 
 {
@@ -9,13 +9,13 @@ Content-Type: application/json
 }
 
 ###
-GET  http://localhost:8000/api/events/
+GET  https://eventhub.local/api/events/
 
 ###
-DELETE http://localhost:8000/api/events/2/
+DELETE http://eventhub.local/api/events/2/
 
 ###
-PUT http://localhost:8000/api/events/3/
+PUT http://eventhub.local/api/events/3/
 Content-Type: application/json
 
 {
@@ -26,7 +26,7 @@ Content-Type: application/json
 }
 
 ###
-PATCH http://localhost:8000/api/events/3/
+PATCH http://eventhub.local/api/events/3/
 Content-Type: application/json
 
 {
@@ -34,16 +34,16 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:8000/api/auth/login/
+POST http://eventhub.local/api/auth/login/
 Content-Type: application/json
 
 {
-    "username": "admintest",
-    "password": "admintest"
+    "username": "admin",
+    "password": "admin"
 }
 
 ###
-GET  http://localhost:8000/api/registrations/
+GET  http://eventhub.local/api/registrations/
 
 ###
-GET http://localhost:8000/api/events/4/
+GET http://eventhub.local/api/events/4/

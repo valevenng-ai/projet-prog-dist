@@ -4,10 +4,6 @@ metadata:
   name: eventhub-ingress
 spec:
   ingressClassName: nginx
-  tls:
-    - hosts:
-        - eventhub.local
-      secretName: tls-secret
   rules:
     - host: eventhub.local
       http:
