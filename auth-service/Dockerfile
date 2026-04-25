@@ -11,4 +11,4 @@ COPY . .
 EXPOSE 8001
  
 # Run Django’s development server
-CMD ["sh", "-c", "python manage.py migrate && python manage.py runserver 0.0.0.0:8001"]
+CMD ["sh", "-c", "python manage.py migrate && python create_admin.py && python manage.py runserver 0.0.0.0:8001"]

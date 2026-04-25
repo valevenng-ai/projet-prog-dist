@@ -14,5 +14,5 @@ spec:
     spec:
       containers:
         - name: event-service
-          image: valentinng00/event-service:9
+          image: valentinng00/event-service:1
           imagePullPolicy: Always
